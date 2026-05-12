@@ -1,0 +1,21 @@
+{
+  "name": "TrendStream",
+  "short_name": "TrendStream",
+  "description": "Watch movies, videos, and read news.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#ff3b30",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

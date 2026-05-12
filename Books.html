@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch the latest trending movies, hit songs, viral videos, and read global news on TrendStream for free.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta property="og:image" content="favicon.png">
+    <meta name="keywords" content="Assamese medium notes, free study materials class 1 to 12, SEBA class 10 notes, AHSEC HS 2nd year notes, Assamese MIL notes, class 10 science Assamese, class 9 maths Assamese, online study materials Assam, free textbooks online.">
+    <meta property="og:title" content="TrendStream - Videos, Movies,Books,Notes & News">
+    <title>Books Category - TrendStream</title>
+    
+    <!-- 👇 Monetag Push Notifications Code 👇 -->
+    <script src="https://5gvci.com/act/files/tag.min.js?z=10943585" data-cfasync="false" async></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Study Banner Styles */
+        .study-banner {
+            background: linear-gradient(135deg, #ff3b30, #ff8a00);
+            border-radius: 15px;
+            padding: 35px 20px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(255, 59, 48, 0.4);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .study-banner::before {
+            content: '📚';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.15;
+            right: -20px;
+            bottom: -30px;
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+        .study-banner h2 {
+            font-size: 28px;
+            font-weight: 900;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+        .study-banner p {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            opacity: 0.95;
+            z-index: 1;
+        }
+
+        /* Existing Grid Styles */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .class-card {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border-top: 4px solid #ff3b30;
+        }
+        .class-title {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .subject-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .subject-list li {
+            background-color: #2a2a2a;
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: #ccc;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .subject-list li::before {
+            content: "📘";
+            margin-right: 10px;
+        }
+        .subject-list li:hover {
+            background-color: #ff3b30;
+            color: #fff;
+            transform: translateX(5px);
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+        .search-container input {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px 25px;
+            font-size: 16px;
+            border-radius: 30px;
+            border: 2px solid #333;
+            outline: none;
+            background-color: #1e1e1e;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .search-container input:focus {
+            border-color: #ff3b30;
+            box-shadow: 0 0 10px rgba(255, 59, 48, 0.3);
+        }
+        .ad-slot {
+            text-align: center;
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="brand-area">
+                <button id="hamburgerBtn" class="hamburger">☰</button>
+                <a href="index.html" style="text-decoration: none;"><div class="logo">Trend<span>Stream</span></div></a>
+            </div>
+            
+            <div class="search-area">
+                <a href="index.html" style="color: #fff; text-decoration: none; font-weight: bold; background-color: #ff3b30; padding: 8px 15px; border-radius: 5px;">⬅ Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="ad-slot">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'd495301a0c0a47745787fa1aaa4fb009',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+        <script src="https://www.highperformanceformat.com/d495301a0c0a47745787fa1aaa4fb009/invoke.js"></script>
+    </div>
+
+    <main class="content-area" style="max-width: 1200px; margin: auto; padding: 20px;">
+        
+        <div class="study-banner">
+            <h2>🎓 Digital Study Library</h2>
+            <p>Read completely free, high-quality Assamese notes for all classes. Your success starts here!</p>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="bookSearchInput" onkeyup="searchBooks()" placeholder="Search class or subject...">
+        </div>
+
+        <div class="books-grid" id="booksGrid">
+            
+            <div class="class-card">
+                <h3 class="class-title">Class 1</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class1-assamese.html'">Primary Assamese</li>
+                    <li onclick="window.location.href='class1-math.html'">Primary Mathematics</li>
+                    <li onclick="window.location.href='class1-english.html'">Primary English</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">Class 2</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class2-assamese-index.html'">Assamese (অসমীয়া)</li>
+                    <li onclick="window.location.href='class2-english.html'">English</li>
+                    <li onclick="window.location.href='class2-math.html'">Mathematics</li>
+                    <li onclick="window.location.href='class2-science.html'">Science</li>
+                    <li onclick="window.location.href='class2-social.html'">Social Science</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">Class 3</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class3-assamese-index.html'">Assamese (অসমীয়া)</li>
+                    <li onclick="window.location.href='class3-english.html'">English</li>
+                    <li onclick="window.location.href='class3-math.html'">Mathematics</li>
+                    <li onclick="window.location.href='class3-science-index.html'">Science</li>
+                    <li onclick="window.location.href='class3-social-index.html'">Social Science</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">Class 4</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class4-assamese-index.html'">Assamese (অসমীয়া)</li>
+                    <li onclick="window.location.href='class4-english-index.html'">English</li>
+                    <li onclick="window.location.href='class4-math-index.html'">Mathematics</li>
+                    <li onclick="window.location.href='class4-science-index.html'">Science</li>
+                    <li onclick="window.location.href='class4-social-index.html'">Social Science</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">Class 5</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class5-assamese-index.html'">Assamese (অসমীয়া)</li>
+                    <li onclick="window.location.href='class5-english-index.html'">English</li>
+                    <li onclick="window.location.href='class5-math-index.html'">Mathematics</li>
+                    <li onclick="window.location.href='class5-science-index.html'">Science</li>
+                    <li onclick="window.location.href='class5-social-index.html'">Social Science</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">Class 6</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class6-assamese-index.html'">Assamese (অসমীয়া)</li>
+                    <li onclick="window.location.href='class-6english/index.html'">English</li>
+                    <li onclick="window.location.href='class6-math-index.html'">Mathematics</li>
+                    <li onclick="window.location.href='class6-science-index.html'">Science</li>
+                    <li onclick="window.location.href='class6-psc-social-index.html'">Social Science</li>   <li onclick="window.location.href='Class-6Hindi/class6-hindi-index.html'">Hindi</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">Class 7</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class7-assamese.html'">Assamese</li>
+                    <li onclick="window.location.href='class7-science.html'">Science</li>
+                    <li onclick="window.location.href='class7-social.html'">Social Science</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">Class 8</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class8-assamese-index.html'">Assamese (অসমীয়া)</li>
+                    <li onclick="window.location.href='class8-english.html'">English</li>
+                    <li onclick="window.location.href='class8-math.html'">Mathematics</li>
+                    <li onclick="window.location.href='class8-science.html'">Science</li>
+                    <li onclick="window.location.href='class8-social.html'">Social Science</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">Class 9</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class9-assamese.html'">Assamese</li>
+                    <li onclick="window.location.href='class9-genmath.html'">Mathematics</li>
+                    <li onclick="window.location.href='class9-genscience.html'">Science</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">Class 10</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class10-assamese.html'">Assamese (অসমীয়া)</li>
+                    <li onclick="window.location.href='class10-genmath.html'">General Mathematics</li>
+                    <li onclick="window.location.href='class10-genscience.html'">General Science</li>
+                    <li onclick="window.location.href='class10-social.html'">Social Science</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">HS 1st Year (Arts)</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class11-polscience.html'">Political Science</li>
+                    <li onclick="window.location.href='class11-assamese.html'">Assamese (MIL)</li>
+                    <li onclick="window.location.href='class11-education.html'">Education</li>
+                    <li onclick="window.location.href='class11-english.html'">English</li>
+                </ul>
+            </div>
+
+            <div class="class-card">
+                <h3 class="class-title">HS 2nd Year (Arts)</h3>
+                <ul class="subject-list">
+                    <li onclick="window.location.href='class12-polscience.html'">Political Science</li>
+                    <li onclick="window.location.href='class12-assamese.html'">Assamese (MIL)</li>
+                    <li onclick="window.location.href='class12-education.html'">Education</li>
+                    <li onclick="window.location.href='class12-english.html'">English</li>
+                </ul>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        function searchBooks() {
+            let input = document.getElementById('bookSearchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('class-card');
+            for (let i = 0; i < cards.length; i++) {
+                let cardText = cards[i].innerText.toLowerCase();
+                if (cardText.includes(input)) {
+                    cards[i].style.display = "block"; 
+                } else {
+                    cards[i].style.display = "none";  
+                }
+            }
+        }
+    </script>
+
+    <!-- 👇 Monetag Vignette Banner Ad 👇 -->
+    <script>(function(s){s.dataset.zone='10943587',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    
+    <!-- 👇 Monetag In-Page Push Ad 👇 -->
+    <script>(function(s){s.dataset.zone='10943586',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</body>
+</html>

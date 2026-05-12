@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch the latest blockbuster movies, Hollywood hits, and Bollywood trending films online for free on TrendStream.">
+    <meta name="keywords" content="watch free movies online, latest Hollywood movies, Bollywood blockbuster movies, free movie streaming, Avengers Endgame full movie, download HD movies, new released movies 2026, web series online free, TrendStream movies">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>TrendStream - Movies</title>
+    
+    <script src="https://5gvci.com/act/files/tag.min.js?z=10943585" data-cfasync="false" async></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Movie Grid Styles */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px 10px;
+            margin-bottom: 30px;
+        }
+        .movie-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .movie-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(255, 59, 48, 0.4);
+        }
+        .movie-poster {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+        .movie-quality {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff3b30;
+            color: #fff;
+            padding: 3px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .movie-info {
+            padding: 15px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .movie-title {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 0 5px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .movie-genre {
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        .watch-btn {
+            background-color: #ff3b30;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: block;
+            transition: 0.3s;
+        }
+        .watch-btn:hover {
+            background-color: #d32f2f;
+        }
+        
+        /* 👇 নতুন ডাউনলোড বাটনের ডিজাইন 👇 */
+        .download-btn {
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: block;
+            margin-top: 8px; /* দুটি বাটনের মাঝে ফাঁকা জায়গা */
+            transition: 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .ad-slot {
+            text-align: center;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+        <h2 style="color: #ff3b30; font-family: sans-serif; letter-spacing: 2px;">TrendStream</h2>
+    </div>
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Categories</h3>
+            <button id="closeBtn" class="close-btn">✖</button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="videos.html">🎬 Video</a></li>
+            <li><a href="songs.html">🎵 Songs</a></li>
+            <li><a href="news.html">📰 News</a></li>
+            <li><a href="#">⭐ Review Videos</a></li>
+            <li><a href="#">🔥 Trending Videos</a></li>
+            <li><a href="movies.html" style="color: #ff3b30;">🍿 Movies</a></li>
+            <li><a href="books.html">📚 Books & Notes</a></li>
+        </ul>
+    </aside>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="brand-area">
+                <button id="hamburgerBtn" class="hamburger">☰</button>
+                <a href="index.html" style="text-decoration: none;"><div class="logo">Trend<span>Stream</span></div></a>
+            </div>
+            <div class="search-area">
+                <input type="text" id="searchInput" placeholder="Search movies...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+        <nav class="bottom-nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item"><a href="movies.html" class="nav-link" style="border-bottom: 3px solid #ff3b30; color: #ff3b30;">Movies</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="books.html" class="nav-link">Books</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="ad-slot">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'd495301a0c0a47745787fa1aaa4fb009',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+        <script src="https://www.highperformanceformat.com/d495301a0c0a47745787fa1aaa4fb009/invoke.js"></script>
+    </div>
+
+    <main class="content-area" style="text-align: center; max-width: 1200px; margin: auto;">
+        
+        <h2 style="color: #fff; border-left: 5px solid #ff3b30; padding-left: 15px; margin-top: 20px; text-align: left; margin-left: 10px; font-size: 26px;">🔥 Trending Movies</h2>
+        
+        <div class="movie-grid">
+            <div class="movie-card">
+                <span class="movie-quality">HD</span>
+                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=400&auto=format&fit=crop" alt="Avengers Endgame" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Avengers: Endgame</h3>
+                    <p class="movie-genre">Action / Sci-Fi • 2019</p>
+                    <a href="#" class="watch-btn">▶ Watch Now</a>
+                    <a href="এখানে_আপনার_লিংকটি_পেস্ট_করুন" target="_blank" class="download-btn">⬇ Download</a>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <span class="movie-quality">4K</span>
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400&auto=format&fit=crop" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">The Dark Knight</h3>
+                    <p class="movie-genre">Action / Thriller • 2008</p>
+                    <a href="#" class="watch-btn">▶ Watch Now</a>
+                    <a href="এখানে_আপনার_লিংকটি_পেস্ট_করুন" target="_blank" class="download-btn">⬇ Download</a>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <span class="movie-quality">HD</span>
+                <img src="https://images.unsplash.com/photo-1574267432553-4b4628081c31?q=80&w=400&auto=format&fit=crop" alt="Joker" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Joker</h3>
+                    <p class="movie-genre">Crime / Drama • 2019</p>
+                    <a href="#" class="watch-btn">▶ Watch Now</a>
+                    <a href="https://t.me/trenstream/3" target="_blank" class="download-btn">⬇ Download</a>
+                </div>
+            </div>
+            
+            <div class="movie-card">
+                <span class="movie-quality">HD</span>
+                <img src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?q=80&w=400&auto=format&fit=crop" alt="Action Movie" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Mad Max: Fury Road</h3>
+                    <p class="movie-genre">Action / Adventure • 2015</p>
+                    <a href="#" class="watch-btn">▶ Watch Now</a>
+                    <a href="এখানে_আপনার_লিংকটি_পেস্ট_করুন" target="_blank" class="download-btn">⬇ Download</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-slot" style="margin: 10px 0 30px 0;">
+            <script async="async" data-cfasync="false" src="https://pl29294946.profitablecpmratenetwork.com/e462accace0d126c5444d18eda03b8fd/invoke.js"></script>
+            <div id="container-e462accace0d126c5444d18eda03b8fd"></div>
+        </div>
+
+        <h2 style="color: #fff; border-left: 5px solid #ff3b30; padding-left: 15px; margin-top: 20px; text-align: left; margin-left: 10px; font-size: 26px;">🎬 Bollywood Hits</h2>
+        
+        <div class="movie-grid">
+            <div class="movie-card">
+                <span class="movie-quality">HD</span>
+                <img src="https://images.unsplash.com/photo-1585647347384-2593bc35786b?q=80&w=400&auto=format&fit=crop" alt="Bollywood" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Pathaan</h3>
+                    <p class="movie-genre">Action / Thriller • 2023</p>
+                    <a href="#" class="watch-btn">▶ Watch Now</a>
+                    <a href="এখানে_আপনার_লিংকটি_পেস্ট_করুন" target="_blank" class="download-btn">⬇ Download</a>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <span class="movie-quality">HD</span>
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=400&auto=format&fit=crop" alt="Bollywood Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Jawan</h3>
+                    <p class="movie-genre">Action / Drama • 2023</p>
+                    <a href="#" class="watch-btn">▶ Watch Now</a>
+                    <a href="এখানে_আপনার_লিংকটি_পেস্ট_করুন" target="_blank" class="download-btn">⬇ Download</a>
+                </div>
+            </div>
+            
+            <div class="movie-card">
+                <span class="movie-quality">CAM</span>
+                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=400&auto=format&fit=crop" alt="Bollywood" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Fighter</h3>
+                    <p class="movie-genre">Action / War • 2024</p>
+                    <a href="#" class="watch-btn">▶ Watch Now</a>
+                    <a href="এখানে_আপনার_লিংকটি_পেস্ট_করুন" target="_blank" class="download-btn">⬇ Download</a>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <span class="movie-quality">HD</span>
+                <img src="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?q=80&w=400&auto=format&fit=crop" alt="Bollywood Hit" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">Animal</h3>
+                    <p class="movie-genre">Crime / Drama • 2023</p>
+                    <a href="#" class="watch-btn">▶ Watch Now</a>
+                    <a href="এখানে_আপনার_লিংকটি_পেস্ট_করুন" target="_blank" class="download-btn">⬇ Download</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+    <footer style="background-color: #111; color: #fff; text-align: center; padding: 30px 20px; margin-top: 30px; font-size: 14px; border-top: 1px solid #222;">
+        <div class="footer-links" style="margin-bottom: 15px;">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Use</a>
+        </div>
+        <p>&copy; 2026 TrendStream. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://pl29294955.profitablecpmratenetwork.com/9e/e9/0d/9ee90d9e8d32380befc9f24be517d419.js"></script>
+
+    <script>(function(s){s.dataset.zone='10943587',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    
+    <script>(function(s){s.dataset.zone='10943586',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</body>
+</html>

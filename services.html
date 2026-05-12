@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upgrade to TrendStream Premium VIP for an ad-free experience and extra earning opportunities.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Premium Services - TrendStream</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Pricing Table Special CSS */
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .pricing-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        /* প্রিমিয়াম কার্ডের স্পেশাল ডিজাইন */
+        .pricing-card.premium {
+            border: 2px solid #ff3b30;
+            box-shadow: 0 10px 30px rgba(255, 59, 48, 0.2);
+            position: relative;
+        }
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff3b30;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .price {
+            font-size: 45px;
+            color: #fff;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .price span {
+            font-size: 16px;
+            color: #888;
+            font-weight: normal;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .feature-list li {
+            margin-bottom: 15px;
+            color: #ccc;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-upgrade {
+            background: #ff3b30;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-upgrade:hover {
+            background: #d32f2f;
+            box-shadow: 0 5px 15px rgba(255, 59, 48, 0.4);
+        }
+        .btn-current {
+            background: #333;
+            color: #aaa;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+        <h2 style="color: #ff3b30; font-family: sans-serif; letter-spacing: 2px;">TrendStream</h2>
+    </div>
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Categories</h3>
+            <button id="closeBtn" class="close-btn">✖</button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="videos.html">🎬 Video</a></li>
+            <li><a href="songs.html">🎵 Songs</a></li>
+            <li><a href="news.html">📰 News</a></li>
+            <li><a href="#">⭐ Review Videos</a></li>
+            <li><a href="#">🔥 Trending Videos</a></li>
+            <li><a href="movies.html">🍿 Movies</a></li>
+            <li><a href="books.html">📚 Books & Notes</a></li>
+        </ul>
+    </aside>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="brand-area">
+                <button id="hamburgerBtn" class="hamburger">☰</button>
+                <div class="logo">Trend<span>Stream</span></div>
+            </div>
+
+            <div class="search-area">
+                <input type="text" id="searchInput" placeholder="Search any topic...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link" style="border-bottom: 3px solid #ff3b30; color: #ff3b30;">Services</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="help.html" class="nav-link">Help</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-area">
+        <h1 style="color: #fff; margin-bottom: 10px;">Choose Your Plan</h1>
+        <p style="color: #aaa; margin-bottom: 40px;">Upgrade for an ad-free experience and exclusive earning tasks.</p>
+
+        <div class="pricing-container">
+            
+            <div class="pricing-card">
+                <h2 style="color: #fff; font-size: 24px;">Basic</h2>
+                <div class="price">Free</div>
+                <p style="color: #888; font-size: 14px; margin-bottom: 25px;">Perfect for getting started</p>
+                
+                <ul class="feature-list">
+                    <li>✅ <span style="color: #ddd;">Standard Video Quality (720p)</span></li>
+                    <li>✅ <span style="color: #ddd;">Read Books & News</span></li>
+                    <li>✅ <span style="color: #ddd;">Basic Earning Tasks</span></li>
+                    <li>❌ <span style="color: #777;">Contains Ads</span></li>
+                    <li>❌ <span style="color: #777;">No Offline Downloads</span></li>
+                </ul>
+                
+                <button class="btn-current">Current Plan</button>
+            </div>
+
+            <div class="pricing-card premium">
+                <div class="popular-badge">⭐ Most Popular</div>
+                <h2 style="color: #ff3b30; font-size: 24px;">Premium VIP</h2>
+                <div class="price">₹99 <span style="font-size: 20px; color: #bbb;">($1.49)</span><span> / mo</span></div>
+                <p style="color: #888; font-size: 14px; margin-bottom: 25px;">For the ultimate experience</p>
+                
+                <ul class="feature-list">
+                    <li>✅ <span style="color: #fff; font-weight: bold;">4K Ultra HD Quality</span></li>
+                    <li>✅ <span style="color: #fff; font-weight: bold;">100% Ad-Free Experience</span></li>
+                    <li>✅ <span style="color: #fff; font-weight: bold;">Unlimited Offline Downloads</span></li>
+                    <li>✅ <span style="color: #fff; font-weight: bold;">High-Paying Earning Tasks</span></li>
+                    <li>✅ <span style="color: #fff; font-weight: bold;">Priority Customer Support</span></li>
+                </ul>
+                
+                <button class="btn-upgrade" onclick="window.location.href='contact.html'">Upgrade Now ➔</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+    <footer style="background-color: #111; color: #fff; text-align: center; padding: 15px; margin-top: 50px; font-size: 14px; border-top: 1px solid #222;">
+        <p>&copy; 2026 TrendStream. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

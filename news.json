@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=600&auto=format&fit=crop",
+        "title": "Global Tech Summit 2026 Announced",
+        "date_category": "📅 April 27, 2026 | Tech",
+        "description": "The biggest tech summit of the year is set to bring revolutionary AI and web developments...",
+        "link": "news1.html"
+    },
+    {
+        "id": 2,
+        "image": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=600&auto=format&fit=crop",
+        "title": "New Blockbuster Movie Breaking Records",
+        "date_category": "📅 April 26, 2026 | Entertainment",
+        "description": "The newly released action thriller has crossed $1 Billion at the global box office...",
+        "link": "news2.html"
+    },
+    {
+        "id": 3,
+        "image": "https://images.unsplash.com/photo-1572949645841-094f3a9c4c94?q=80&w=600&auto=format&fit=crop",
+        "title": "Political Changes in the Parliament",
+        "date_category": "📅 April 25, 2026 | Politics",
+        "description": "New policies regarding the upcoming elections have been discussed in the Lok Sabha today...",
+        "link": "news3.html"
+    },
+    {
+        "id": 4,
+        "image": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=600&auto=format&fit=crop",
+        "title": "First Human Colony on Mars by 2030",
+        "date_category": "📅 April 28, 2026 | Space",
+        "description": "Space agencies have officially signed an agreement to start building the first human settlement on Mars...",
+        "link": "news4.html"
+    }
+]

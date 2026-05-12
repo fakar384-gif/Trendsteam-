@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TrendStream Help Center - FAQ and Troubleshooting">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Help Center & FAQ - TrendStream</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* FAQ Accordion Special CSS */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .faq-item {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .faq-question {
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #252525;
+            transition: 0.3s;
+        }
+        .faq-question:hover {
+            color: #ff3b30;
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 15px;
+            background: #1a1a1a;
+        }
+        .faq-answer.open {
+            padding: 20px;
+            max-height: 500px; /* উত্তরটি বের হওয়ার জায়গা */
+            border-top: 1px solid #333;
+        }
+        .faq-icon {
+            font-size: 24px;
+            color: #ff3b30;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg); /* প্লাস আইকন ঘুরে ক্রস (X) হয়ে যাবে */
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+        <h2 style="color: #ff3b30; font-family: sans-serif; letter-spacing: 2px;">TrendStream</h2>
+    </div>
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Categories</h3>
+            <button id="closeBtn" class="close-btn">✖</button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="videos.html">🎬 Video</a></li>
+            <li><a href="songs.html">🎵 Songs</a></li>
+            <li><a href="news.html">📰 News</a></li>
+            <li><a href="#">⭐ Review Videos</a></li>
+            <li><a href="#">🔥 Trending Videos</a></li>
+            <li><a href="movies.html">🍿 Movies</a></li>
+            <li><a href="books.html">📚 Books & Notes</a></li>
+        </ul>
+    </aside>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="brand-area">
+                <button id="hamburgerBtn" class="hamburger">☰</button>
+                <div class="logo">Trend<span>Stream</span></div>
+            </div>
+
+            <div class="search-area">
+                <input type="text" id="searchInput" placeholder="Search any topic...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item">
+                    <button class="drop-btn">Services ▼</button>
+                    <ul class="dropdown-content">
+                        <li><a href="services.html">Premium Subscription</a></li>
+                        <li><a href="services.html">Ad-Free Experience</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <button class="drop-btn">Contact Us ▼</button>
+                    <ul class="dropdown-content">
+                        <li><a href="contact.html">Email Support</a></li>
+                        <li><a href="contact.html">Live Chat</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item" style="border-bottom: 3px solid #ff3b30;">
+                    <button class="drop-btn" style="color: #ff3b30;">Help ▼</button>
+                    <ul class="dropdown-content">
+                        <li><a href="help.html">FAQ</a></li>
+                        <li><a href="help.html">Troubleshooting</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <button class="drop-btn">About Us ▼</button>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html">Careers</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-area">
+        <h1 style="color: #fff; margin-bottom: 10px;">Help Center & FAQ</h1>
+        <p style="color: #aaa; margin-bottom: 40px;">Find answers to your questions and learn how to use TrendStream.</p>
+
+        <div class="faq-container">
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    1. How can I earn money on TrendStream? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    You can easily earn money by watching sponsored videos, completing daily tasks, and sharing your referral link with friends. Just create an account, go to the 'Earn' section, and start completing tasks to earn rewards directly to your wallet!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    2. How do I upgrade to Premium VIP? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    To upgrade to Premium, go to the 'Services' page from the top menu. Select the Premium VIP plan for ৳99/month. You will get 4K Ultra HD quality, a 100% ad-free experience, and exclusive earning tasks.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    3. Why is my video buffering too much? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Buffering usually happens due to a slow internet connection. Try lowering the video quality from the player settings, clear your browser cache, or switch to a faster Wi-Fi/Mobile Data network.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    4. Can I read Books and News for free? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! All Class 1-12 study materials, storybooks, and daily world news are completely free for all users. You do not need a premium subscription to access the reading section.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    5. How can I contact the admin? <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    You can contact us anytime through the 'Contact Us' page. You can email us at fakar384@gmail.com, call us at +91 6002060789, or send a WhatsApp message to +91 8099259792.
+                </div>
+            </div>
+
+        </div>
+
+        <p style="margin-top: 40px; color: #888;">Still need help? <a href="contact.html" style="color: #ff3b30; text-decoration: none; font-weight: bold;">Contact Support ➔</a></p>
+    </main>
+
+    <script src="script.js"></script>
+    
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = element.nextElementSibling;
+            
+            // যদি ওপেন থাকে, তবে বন্ধ হবে
+            if (faqItem.classList.contains("active")) {
+                faqItem.classList.remove("active");
+                answer.classList.remove("open");
+            } 
+            // যদি বন্ধ থাকে, তবে খুলবে (এবং অন্যগুলো বন্ধ হয়ে যাবে)
+            else {
+                // আগের খোলাগুলো বন্ধ করার কোড (ঐচ্ছিক)
+                document.querySelectorAll(".faq-item").forEach(item => {
+                    item.classList.remove("active");
+                    item.querySelector(".faq-answer").classList.remove("open");
+                });
+
+                // যেটায় ক্লিক করা হয়েছে সেটা খুলবে
+                faqItem.classList.add("active");
+                answer.classList.add("open");
+            }
+        }
+    </script>
+
+    <footer style="background-color: #111; color: #fff; text-align: center; padding: 15px; margin-top: 50px; font-size: 14px; border-top: 1px solid #222;">
+        <p>&copy; 2026 TrendStream. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
