@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about TrendStream - The ultimate platform for entertainment, education, and earning.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>About Us - TrendStream</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* About Us স্পেশাল ডিজাইন */
+        .about-card {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            transition: 0.3s;
+            position: relative; /* ব্যাজ বসানোর জন্য */
+        }
+        .about-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff3b30;
+            box-shadow: 0 10px 25px rgba(255, 59, 48, 0.2);
+        }
+        .about-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+            color: #ff3b30;
+        }
+        /* Coming Soon ব্যাজের ডিজাইন */
+        .coming-soon-badge {
+            background: #ff3b30;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            vertical-align: middle;
+            margin-left: 8px;
+            box-shadow: 0 2px 8px rgba(255, 59, 48, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+        <h2 style="color: #ff3b30; font-family: sans-serif; letter-spacing: 2px;">TrendStream</h2>
+    </div>
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Categories</h3>
+            <button id="closeBtn" class="close-btn">✖</button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="videos.html">🎬 Video</a></li>
+            <li><a href="songs.html">🎵 Songs</a></li>
+            <li><a href="news.html">📰 News</a></li>
+            <li><a href="#">⭐ Review Videos</a></li>
+            <li><a href="#">🔥 Trending Videos</a></li>
+            <li><a href="movies.html">🍿 Movies</a></li>
+            <li><a href="books.html">📚 Books & Notes</a></li>
+        </ul>
+    </aside>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="brand-area">
+                <button id="hamburgerBtn" class="hamburger">☰</button>
+                <div class="logo">Trend<span>Stream</span></div>
+            </div>
+
+            <div class="search-area">
+                <input type="text" id="searchInput" placeholder="Search any topic...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item">
+                    <button class="drop-btn">Services ▼</button>
+                    <ul class="dropdown-content">
+                        <li><a href="services.html">Premium Subscription</a></li>
+                        <li><a href="services.html">Ad-Free Experience</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <button class="drop-btn">Contact Us ▼</button>
+                    <ul class="dropdown-content">
+                        <li><a href="contact.html">Email Support</a></li>
+                        <li><a href="contact.html">Live Chat</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <button class="drop-btn">Help ▼</button>
+                    <ul class="dropdown-content">
+                        <li><a href="help.html">FAQ</a></li>
+                        <li><a href="help.html">Troubleshooting</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item" style="border-bottom: 3px solid #ff3b30;">
+                    <button class="drop-btn" style="color: #ff3b30;">About Us ▼</button>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html">Careers</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-area">
+        
+        <div style="max-width: 800px; margin: 0 auto 50px auto;">
+            <h1 style="font-size: 38px; color: #fff; margin-bottom: 15px;">Welcome to <span style="color: #ff3b30;">TrendStream</span></h1>
+            <p style="color: #aaa; font-size: 16px; line-height: 1.8;">
+                TrendStream is not just another streaming platform. We are building a revolutionary digital ecosystem where entertainment, education, and earning come together. Whether you want to watch blockbuster movies, read the latest news, download class notes, or earn real money, everything is available in one place.
+            </p>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; max-width: 1000px; margin: 0 auto;">
+            
+            <div class="about-card">
+                <div class="about-icon">🍿</div>
+                <h3 style="color: #fff; margin-bottom: 10px; font-size: 20px;">Unlimited Entertainment</h3>
+                <p style="color: #888; font-size: 14px; line-height: 1.6;">
+                    Enjoy the latest trending movies, hit songs, and viral videos in high quality. Our massive library is updated daily to keep you entertained.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="about-icon">💰</div>
+                <h3 style="color: #fff; margin-bottom: 10px; font-size: 20px;">
+                    Watch & Earn <span class="coming-soon-badge">Coming Soon</span>
+                </h3>
+                <p style="color: #888; font-size: 14px; line-height: 1.6;">
+                    Turn your screen time into earning time! Complete simple daily tasks, watch sponsored videos, and invite friends to earn real money rewards.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="about-icon">📚</div>
+                <h3 style="color: #fff; margin-bottom: 10px; font-size: 20px;">Educational Hub</h3>
+                <p style="color: #888; font-size: 14px; line-height: 1.6;">
+                    We believe in learning. Get free access to Class 1-12 books, important study notes, global tech news, and sports updates instantly.
+                </p>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 60px; background: linear-gradient(135deg, #2a0808 0%, #1a1a1a 100%); padding: 40px 20px; border-radius: 15px; border: 1px solid #444; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h2 style="color: #fff; margin-bottom: 15px;">Ready to join our community?</h2>
+            <p style="color: #ccc; margin-bottom: 25px;">Upgrade to our Premium VIP plan today for an ad-free experience and exclusive earning tasks.</p>
+            <button onclick="window.location.href='services.html'" style="background: #ff3b30; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(255,59,48,0.4);">
+                View Our Plans ➔
+            </button>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    
+    <footer style="background-color: #111; color: #fff; text-align: center; padding: 15px; margin-top: 50px; font-size: 14px; border-top: 1px solid #222;">
+        <p>&copy; 2026 TrendStream. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
