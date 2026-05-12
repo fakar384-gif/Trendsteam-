@@ -1,245 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Watch the latest trending movies, hit songs, viral videos, and read global news on TrendStream for free.">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:image" content="favicon.png">
-    <meta property="og:title" content="TrendStream - Videos, Movies,Books,Notes & News">
-    <meta name="keywords" content="movies, free movies, trending news, viral videos, TrendStream, online streaming, free movies online, Assamese study materials, class 10 notes Assamese, HS 2nd year Assamese notes,live IPL news, latest trending songs,free entertainment platform, cricket live updates">
-    <meta name="google-site-verification" content="fpfB97jj1GDrzykrzrYU2FaytjGanrRhqgaMq9PgvgE" />
-    
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#121212">
-    <link rel="apple-touch-icon" href="favicon.png">
-
-    <title>TrendStream - Home</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <title>Class 6 Science - সূচিপত্ৰ</title>
     <style>
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 15px 10px; margin-bottom: 20px; }
-        .news-card { background-color: #1e1e1e; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; display: flex; flex-direction: column; border-bottom: 3px solid #ff3b30; text-align: left; }
-        .news-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 59, 48, 0.3); }
-        .news-image { width: 100%; height: 160px; object-fit: cover; background-color: #2a2a2a; }
-        .news-content { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
-        .preview-card { background-color: #2a2a2a; border-radius: 8px; text-align: center; padding: 30px 15px; transition: 0.3s; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 180px; }
-        .preview-icon { font-size: 50px; margin-bottom: 10px; }
-        .footer-links a { color: #888; text-decoration: none; margin: 0 10px; transition: 0.3s; }
-        .footer-links a:hover { color: #ff3b30; }
-        
-        /* Thumbnail Hover Effect */
-        .fake-video-wrapper:hover img { opacity: 0.6; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 15px;
+        }
+        .index-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .chapter-list li {
+            margin-bottom: 15px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 15px;
+            background-color: #f8f9fa;
+            color: #333;
+            text-decoration: none;
+            border-radius: 8px;
+            border-left: 5px solid #007bff;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .chapter-list a:hover {
+            background-color: #007bff;
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+        .chapter-list a span {
+            font-weight: normal;
+            font-size: 14px;
+            color: #666;
+            display: block;
+            margin-top: 5px;
+        }
+        .chapter-list a:hover span {
+            color: #e0e0e0;
+        }
     </style>
 </head>
 <body>
-    <div id="preloader">
-        <div class="loader"></div>
-        <h2 style="color: #ff3b30; font-family: sans-serif; letter-spacing: 2px;">TrendStream</h2>
-    </div>
 
-    <aside id="sidebar" class="sidebar">
-        <div class="sidebar-header">
-            <h3>Categories</h3>
-            <button id="closeBtn" class="close-btn">✖</button>
-        </div>
-        <ul class="sidebar-links">
-            <li><a href="videos.html">🎬 Video</a></li>
-            <li><a href="songs.html">🎵 Songs</a></li>
-            <li><a href="news.html">📰 News</a></li>
-            <li><a href="#">⭐ Review Videos</a></li>
-            <li><a href="#">🔥 Trending Videos</a></li>
-            <li><a href="movies.html">🍿 Movies</a></li>
-            <li><a href="books.html">📚 Books & Notes</a></li>
-        </ul>
-    </aside>
+    <div class="index-container">
+        <h1>ষষ্ঠ শ্ৰেণীৰ বিজ্ঞান<br><span style="font-size: 16px; color: #555;">(Class 6 Science - সূচিপত্ৰ)</span></h1>
 
-    <header class="main-header">
-        <div class="top-bar">
-            <div class="brand-area">
-                <button id="hamburgerBtn" class="hamburger">☰</button>
-                <div class="logo">Trend<span>Stream</span></div>
-            </div>
-            <div class="search-area">
-                <input type="text" id="searchInput" placeholder="Search any topic...">
-                <button class="search-btn">🔍</button>
-            </div>
-        </div>
-        <nav class="bottom-nav">
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link" style="border-bottom: 3px solid #ff3b30; color: #ff3b30;">Home</a></li>
-                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
-                <li class="nav-item"><a href="help.html" class="nav-link">Help</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="content-area" style="text-align: center;">
-        <h2 style="color: #fff; margin-top: 20px; margin-bottom: 10px;">Welcome to TrendStream!</h2>
-        <p style="color: #aaa; font-size: 14px; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">Explore unlimited videos, movies, songs, books, and the latest news.</p>
-        
-        <div class="hero-banner" style="text-align: left;"> 
-            <div class="banner-content">
-                <span class="trending-badge">🔥 Trending Now</span>
-                <h2>Avengers: Endgame</h2>
-                <p>After the devastating events of Infinity War, the Avengers assemble once more to reverse Thanos' actions and restore balance to the universe.</p>
-                <div class="banner-buttons">
-                    <button class="play-btn" onclick="window.location.href='movies.html'">▶ Watch Now</button>
-                    <button class="info-btn" onclick="window.location.href='movies.html'">ℹ More Info</button>
-                </div>
-            </div>
-            <div class="banner-image">
-                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800&auto=format&fit=crop" alt="Avengers">
-            </div>
-        </div>
-        
-        <h2 class="category-title" style="text-align: left; margin-left: 10px; margin-top: 30px;">🌟 Top Highlights</h2>
-        
-        <div class="video-grid">
-            <div class="video-card" style="padding: 0; background: #000; overflow: hidden;">
-                <video id="vancedVideo" width="100%" style="display: block;" playsinline>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                </video>
-                <div class="custom-controls" style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background: #1e1e1e; border-bottom: 1px solid #333;">
-                    <button id="playPauseBtn" style="background: #ff3b30; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶</button>
-                    <input type="range" id="seekBar" value="0" style="flex-grow: 1; margin: 0 10px; cursor: pointer;">
-                    <span id="timeDisplay" style="color: #fff; font-size: 12px; margin-right: 10px; min-width: 65px;">0:00 / 0:00</span>
-                    <button id="pipBtn" style="background: #333; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px;">PiP</button>
-                    <button id="fullScreenBtn" style="background: #333; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px; margin-left: 5px;">⛶</button>
-                </div>
-                <div style="padding: 15px; text-align: left; background: #1e1e1e;">
-                    <h3 style="margin-top: 0;">Avengers: Endgame (Trailer)</h3>
-                    <p style="margin-bottom: 0;">🍿 Ad-Free Vanced Player</p>
-                </div>
-            </div>
+        <ul class="chapter-list">
+            <li><a href="class6-science-ch1.html">অধ্যায় ১: খাদ্যৰ উপাদান <span>(Components of Food)</span></a></li>
             
-            <div class="video-card" onclick="window.location.href='videos.html'" style="cursor: pointer; padding: 0; background: #1e1e1e; overflow: hidden; text-align: left;">
-                <div class="fake-video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
-                    <img src="https://img.youtube.com/vi/JE84sFZZgAQ/mqdefault.jpg" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; transition: 0.3s; opacity: 0.8;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 59, 48, 0.9); color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; font-size: 18px;">▶ Play</div>
-                </div>
-                <div style="padding: 15px;">
-                    <h3 style="margin: 0 0 5px 0;">O saki Saki Re</h3>
-                    <p style="margin: 0; color: #ff3b30; font-size: 14px; font-weight: bold;">🎵 Trending Song (Watch Now ➔)</p>
-                </div>
-            </div>
-
-            <div class="video-card" onclick="window.location.href='books.html'" style="cursor: pointer; text-align: center;">
-                <div class="preview-card">
-                    <div class="preview-icon">📘</div>
-                    <h3 style="color: #fff; margin-bottom: 5px;">Class 1-12 Books</h3>
-                    <p style="color: #ff3b30; font-size: 14px; font-weight: bold;">Click to Read ➔</p>
-                </div>
-                <h3 style="margin-top: 10px;">Study Materials & Notes</h3>
-                <p>📚 Educational Books</p>
-            </div>
-
-            <div class="video-card" onclick="window.location.href='news.html'" style="cursor: pointer; text-align: center;">
-                <div class="preview-card">
-                    <div class="preview-icon">📰</div>
-                    <h3 style="color: #fff; margin-bottom: 5px;">Daily World News</h3>
-                    <p style="color: #ff3b30; font-size: 14px; font-weight: bold;">Read Articles ➔</p>
-                </div>
-                <h3 style="margin-top: 10px;">Global Tech & Sports</h3>
-                <p>🌍 Breaking News</p>
-            </div>
-        </div>
-
-        <h2 style="color: #fff; border-left: 5px solid #ff3b30; padding-left: 15px; margin-top: 50px; text-align: left; margin-left: 10px; font-size: 24px;">🌍 Top World News</h2>
-        <div class="news-grid" id="homeNewsGrid"></div>
-
-        <h2 style="color: #fff; border-left: 5px solid #ff3b30; padding-left: 15px; text-align: left; margin-left: 10px; font-size: 24px;">🏏 IPL & Sports News</h2>
-        <div class="news-grid" id="sportsNewsGrid"></div>
-    </main>
-
-    <footer style="background-color: #111; color: #fff; text-align: center; padding: 30px 20px; margin-top: 30px; font-size: 14px; border-top: 1px solid #222;">
-        <div class="footer-links" style="margin-bottom: 15px;">
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="terms.html">Terms of Use</a>
-        </div>
-        <p>&copy; 2026 TrendStream. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // ✅ Preloader
-        window.addEventListener('load', () => { document.getElementById('preloader').style.display = 'none'; });
-
-        // ✅ Sidebar Menu Logic
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const closeBtn = document.getElementById('closeBtn');
-        const sidebar = document.getElementById('sidebar');
-
-        if(hamburgerBtn && closeBtn && sidebar) {
-            hamburgerBtn.addEventListener('click', () => {
-                sidebar.classList.add('active'); 
-            });
-            closeBtn.addEventListener('click', () => {
-                sidebar.classList.remove('active'); 
-            });
-        }
-
-        // ✅ News Fetch Logic
-        function createNewsCard(image, title, desc, link) {
-            return `<div class="news-card"><img src="${image}" class="news-image"><div class="news-content"><h3>${title}</h3><p>${desc}</p><a href="${link}" target="_blank" style="background:#ff3b30;color:#fff;padding:8px 15px;text-decoration:none;border-radius:5px;text-align:center;margin-top:auto;">Read More</a></div></div>`;
-        }
-
-        const fetchNews = (url, containerId) => {
-            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${url}`)
-            .then(res => res.json()).then(data => {
-                const container = document.getElementById(containerId);
-                container.innerHTML = ''; 
-                data.items.slice(0, 3).forEach(item => {
-                    container.innerHTML += createNewsCard(item.thumbnail || 'https://via.placeholder.com/300x160', item.title, item.description.replace(/<[^>]+>/g, '').substring(0, 90) + '...', item.link);
-                });
-            }).catch(e => console.log("News error"));
-        }
-
-        fetchNews('https://feeds.bbci.co.uk/news/world/rss.xml', 'homeNewsGrid');
-        fetchNews('https://timesofindia.indiatimes.com/rssfeeds/4719148.cms', 'sportsNewsGrid');
-
-        // ✅ Basic Video Controls
-        const video = document.getElementById("vancedVideo");
-        const playPauseBtn = document.getElementById("playPauseBtn");
-        const fullScreenBtn = document.getElementById("fullScreenBtn");
-        const pipBtn = document.getElementById("pipBtn");
-
-        if(video && playPauseBtn) {
-            playPauseBtn.onclick = () => {
-                if (video.paused) { video.play(); playPauseBtn.innerText = "⏸"; }
-                else { video.pause(); playPauseBtn.innerText = "▶"; }
-            };
-        }
-        
-        if(video && fullScreenBtn) {
-            fullScreenBtn.onclick = () => {
-                if (!document.fullscreenElement) {
-                    video.requestFullscreen?.() || video.webkitRequestFullscreen?.() || video.msRequestFullscreen?.();
-                } else {
-                    document.exitFullscreen?.();
-                }
-            };
-        }
-
-        if(video && pipBtn) {
-            pipBtn.onclick = async () => {
-                try {
-                    if (video !== document.pictureInPictureElement) {
-                        await video.requestPictureInPicture();
-                    } else {
-                        await document.exitPictureInPicture();
-                    }
-                } catch (error) {
-                    console.log("PiP not supported.");
-                }
-            };
-        }
-    </script>
-
-    <script src="https://pl29294955.profitablecpmratenetwork.com/9e/e9/0d/9ee90d9e8d32380befc9f24be517d419.js"></script>
+            <li><a href="#">অধ্যায় ২: বস্তুবোৰৰ শ্ৰেণীবিভাজন <span>(Sorting Materials into Groups)</span></a></li>
+            <li><a href="#">অধ্যায় ৩: পদাৰ্থৰ পৃথকীকৰণ <span>(Separation of Substances)</span></a></li>
+            <li><a href="#">অধ্যায় ৪: উদ্ভিদৰ বিষয়ে জানো আহা <span>(Getting to Know Plants)</span></a></li>
+            <li><a href="#">অধ্যায় ৫: দেহৰ চলন <span>(Body Movements)</span></a></li>
+            <li><a href="#">অধ্যায় ৬: জীৱ আৰু ইয়াৰ চৌপাশ <span>(The Living Organisms and Their Surroundings)</span></a></li>
+            <li><a href="#">অধ্যায় ৭: গতি আৰু দূৰত্বৰ জোখ-মাখ <span>(Motion and Measurement of Distances)</span></a></li>
+            <li><a href="#">অধ্যায় ۸: পোহৰ, ছাঁ আৰু প্ৰতিফলন <span>(Light, Shadows and Reflections)</span></a></li>
+            <li><a href="#">অধ্যায় ৯: বিদ্যুৎ আৰু বৰ্তনী <span>(Electricity and Circuits)</span></a></li>
+            <li><a href="#">অধ্যায় ১০: চুম্বকৰ সৈতে ধেমালি <span>(Fun with Magnets)</span></a></li>
+            <li><a href="#">অধ্যায় ১১: আমাৰ চাৰিওকাষৰ বায়ু <span>(Air Around Us)</span></a></li>
+        </ul>
+    </div>
 
 </body>
 </html>
