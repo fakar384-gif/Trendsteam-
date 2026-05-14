@@ -202,7 +202,6 @@
         <div id="librarySection" style="display: none;">
             <div id="userProfileHeader" style="display: flex; align-items: center; gap: 20px; padding: 20px; background: #1a1a1a; border-radius: 10px; margin-top: 10px; border: 1px solid #333;"></div>
             
-            <!-- 🟢 UPDATED SUBSCRIPTIONS UI 🟢 -->
             <h2 class="category-title" style="margin-top: 30px; color: #ff3b30;">🔔 Subscribed Channels</h2>
             <div class="scroll-grid" id="subscriptionsGrid" style="gap: 20px; padding-bottom: 15px;"></div>
             
@@ -234,12 +233,16 @@
         const auth = firebase.auth();
         const provider = new firebase.auth.GoogleAuthProvider();
 
-        // 🟢 FIX: Google Login with Popup instead of Redirect
+        // 🟢 FIX: Mobile Login Redirect System 🟢
         function googleLogin() { 
-            auth.signInWithPopup(provider).catch(function(error) {
-                alert("লগইন সমস্যা: " + error.message + "\n\nদয়া করে ক্রোম ব্রাউজার ব্যবহার করুন।");
-            }); 
+            auth.signInWithRedirect(provider); 
         }
+
+        // 🟢 FIX: Catch errors when returning from redirect 🟢
+        auth.getRedirectResult().catch(function(error) {
+            alert("লগইন সমস্যা: " + error.message);
+        });
+
         function logout() { auth.signOut(); }
 
         auth.onAuthStateChanged((user) => {
@@ -267,7 +270,7 @@
         let player; currentPlaylist = []; windowHomePlaylist = []; recommendedPlaylist = []; 
         let currentVideoIndex = 0; currentActiveVideoObj = null; nextPageToken = ''; currentCategory = 'Trending';
 
-        // 🟢 FIX: Check if it's a Shared Link on Page Load
+        // Check if it's a Shared Link on Page Load
         window.onload = () => { 
             const urlParams = new URLSearchParams(window.location.search);
             const sharedVideoId = urlParams.get('v');
@@ -280,7 +283,7 @@
             }
         };
 
-        // 🟢 FIX: Function to Handle Shared Links
+        // Function to Handle Shared Links
         async function loadSharedVideo(videoId) {
             const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${API_KEY}`;
             try {
@@ -441,7 +444,7 @@
             
             saveToHistory(videoObj); updateUserPreferences(videoObj); checkSavedStatus(videoObj.id); checkSubscribeStatus(videoObj.channel); loadAIRecommendations(); 
             
-            // 🟢 FIX: Update Browser URL without refresh so Sharing works for Sub-repository 🟢
+            // Update Browser URL without refresh so Sharing works for Sub-repository
             const newUrl = window.location.protocol + "//" + window.location.host + "/Trendsteam-/?v=" + videoObj.id;
             window.history.pushState({path:newUrl}, '', newUrl);
         }
@@ -562,7 +565,6 @@
         function toggleLike() { document.getElementById('likeBtn').classList.toggle('active'); document.getElementById('dislikeBtn').classList.remove('active'); }
         function toggleDislike() { document.getElementById('dislikeBtn').classList.toggle('active'); document.getElementById('likeBtn').classList.remove('active'); }
         
-        // 🟢 FIX: Smart Sharing URL for Sub-repository 🟢
         function getShareUrl() { 
             if (currentActiveVideoObj && currentActiveVideoObj.id) { 
                 return window.location.origin + "/Trendsteam-/?v=" + currentActiveVideoObj.id; 
