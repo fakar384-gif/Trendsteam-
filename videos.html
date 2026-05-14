@@ -233,15 +233,21 @@
         const auth = firebase.auth();
         const provider = new firebase.auth.GoogleAuthProvider();
 
-        // 🟢 FIX: 100% Popup Login with Alerts 🟢
+        // 🟢 FIX: Force Browser to remember login 🟢
+        auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
         function googleLogin() { 
-            alert("লগইন উইন্ডো খুলছে... দয়া করে একটু অপেক্ষা করুন।");
-            auth.signInWithPopup(provider).then((result) => {
-                alert("লগইন সফল হয়েছে! স্বাগতম " + result.user.displayName);
-            }).catch(function(error) {
-                alert("লগইন সমস্যা: " + error.message + "\n\nদয়া করে ক্রোম ব্রাউজার ব্যবহার করুন।");
-            }); 
+            auth.signInWithRedirect(provider); 
         }
+
+        // 🟢 FIX: Catch the login when returning from Google 🟢
+        auth.getRedirectResult().then(function(result) {
+            if (result && result.user) {
+                console.log("Login Success");
+            }
+        }).catch(function(error) {
+            alert("লগইন এরর: " + error.message);
+        });
 
         function logout() { auth.signOut(); }
 
