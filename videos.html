@@ -233,15 +233,15 @@
         const auth = firebase.auth();
         const provider = new firebase.auth.GoogleAuthProvider();
 
-        // 🟢 FIX: Mobile Login Redirect System 🟢
+        // 🟢 FIX: 100% Popup Login with Alerts 🟢
         function googleLogin() { 
-            auth.signInWithRedirect(provider); 
+            alert("লগইন উইন্ডো খুলছে... দয়া করে একটু অপেক্ষা করুন।");
+            auth.signInWithPopup(provider).then((result) => {
+                alert("লগইন সফল হয়েছে! স্বাগতম " + result.user.displayName);
+            }).catch(function(error) {
+                alert("লগইন সমস্যা: " + error.message + "\n\nদয়া করে ক্রোম ব্রাউজার ব্যবহার করুন।");
+            }); 
         }
-
-        // 🟢 FIX: Catch errors when returning from redirect 🟢
-        auth.getRedirectResult().catch(function(error) {
-            alert("লগইন সমস্যা: " + error.message);
-        });
 
         function logout() { auth.signOut(); }
 
@@ -270,7 +270,6 @@
         let player; currentPlaylist = []; windowHomePlaylist = []; recommendedPlaylist = []; 
         let currentVideoIndex = 0; currentActiveVideoObj = null; nextPageToken = ''; currentCategory = 'Trending';
 
-        // Check if it's a Shared Link on Page Load
         window.onload = () => { 
             const urlParams = new URLSearchParams(window.location.search);
             const sharedVideoId = urlParams.get('v');
@@ -283,7 +282,6 @@
             }
         };
 
-        // Function to Handle Shared Links
         async function loadSharedVideo(videoId) {
             const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${API_KEY}`;
             try {
@@ -444,7 +442,6 @@
             
             saveToHistory(videoObj); updateUserPreferences(videoObj); checkSavedStatus(videoObj.id); checkSubscribeStatus(videoObj.channel); loadAIRecommendations(); 
             
-            // Update Browser URL without refresh so Sharing works for Sub-repository
             const newUrl = window.location.protocol + "//" + window.location.host + "/Trendsteam-/?v=" + videoObj.id;
             window.history.pushState({path:newUrl}, '', newUrl);
         }
