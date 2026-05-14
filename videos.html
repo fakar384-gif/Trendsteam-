@@ -234,7 +234,12 @@
         const auth = firebase.auth();
         const provider = new firebase.auth.GoogleAuthProvider();
 
-        function googleLogin() { auth.signInWithRedirect(provider); }
+        // 🟢 FIX: Google Login with Popup instead of Redirect
+        function googleLogin() { 
+            auth.signInWithPopup(provider).catch(function(error) {
+                alert("লগইন সমস্যা: " + error.message + "\n\nদয়া করে ক্রোম ব্রাউজার ব্যবহার করুন।");
+            }); 
+        }
         function logout() { auth.signOut(); }
 
         auth.onAuthStateChanged((user) => {
@@ -262,7 +267,41 @@
         let player; currentPlaylist = []; windowHomePlaylist = []; recommendedPlaylist = []; 
         let currentVideoIndex = 0; currentActiveVideoObj = null; nextPageToken = ''; currentCategory = 'Trending';
 
-        window.onload = () => { loadTrendingHomeVideos(); loadAIRecommendations(); };
+        // 🟢 FIX: Check if it's a Shared Link on Page Load
+        window.onload = () => { 
+            const urlParams = new URLSearchParams(window.location.search);
+            const sharedVideoId = urlParams.get('v');
+            
+            if (sharedVideoId) {
+                loadSharedVideo(sharedVideoId);
+            } else {
+                loadTrendingHomeVideos(); 
+                loadAIRecommendations(); 
+            }
+        };
+
+        // 🟢 FIX: Function to Handle Shared Links
+        async function loadSharedVideo(videoId) {
+            const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${API_KEY}`;
+            try {
+                const response = await fetch(url); const data = await response.json();
+                if (data.items && data.items.length > 0) {
+                    const item = data.items[0];
+                    const title = item.snippet.title; 
+                    const channel = item.snippet.channelTitle; 
+                    const thumbnail = item.snippet.thumbnails.medium ? item.snippet.thumbnails.medium.url : item.snippet.thumbnails.default.url;
+                    
+                    currentPlaylist = [{ id: videoId, title: title, channel: channel, thumbnail: thumbnail }];
+                    
+                    const searchResultsDiv = document.getElementById('searchResults');
+                    document.getElementById('searchTitle').style.display = 'block'; 
+                    document.getElementById('searchTitle').innerText = '🔗 Shared Video';
+                    searchResultsDiv.innerHTML = `<div class="video-card" id="search-card-0" onclick="playSearchVideo(0)"><div class="video-thumbnail-wrapper"><img src="${thumbnail}" alt="Thumbnail"><div class="play-icon">▶ Play</div></div><div class="video-info"><div class="video-details"><h3>${title.substring(0, 50)}...</h3><p>${channel}</p></div></div></div>`;
+                    
+                    playSearchVideo(0);
+                }
+            } catch (error) { console.error("Error loading shared video"); }
+        }
 
         function startVoiceSearch() {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -380,7 +419,6 @@
 
         function playSearchVideo(index) { playSelectedVideo(index, 'search-card-'); }
 
-        // 🟢 FUNCTION TO SEARCH CHANNEL WHEN AVATAR CLICKED 🟢
         function searchChannel(channelName) {
             document.getElementById('youtubeSearch').value = channelName;
             searchYouTube();
@@ -402,6 +440,10 @@
             const selectedCard = document.getElementById(`${videoObj.prefix}${currentVideoIndex}`); if (selectedCard) selectedCard.classList.add('active-video');
             
             saveToHistory(videoObj); updateUserPreferences(videoObj); checkSavedStatus(videoObj.id); checkSubscribeStatus(videoObj.channel); loadAIRecommendations(); 
+            
+            // 🟢 FIX: Update Browser URL without refresh so Sharing works for Sub-repository 🟢
+            const newUrl = window.location.protocol + "//" + window.location.host + "/Trendsteam-/?v=" + videoObj.id;
+            window.history.pushState({path:newUrl}, '', newUrl);
         }
 
         function playFromHistory(index) { hideLibrary(); let history = JSON.parse(localStorage.getItem('ts_history')) || []; currentPlaylist = history; playSelectedVideo(index, 'history-card-'); }
@@ -451,7 +493,6 @@
                     savedGrid.innerHTML = savedHTML || '<div class="empty-state">No saved videos. Click the + Save button on a video.</div>';
                 });
 
-                // 🟢 UPDATED CIRCULAR SUBSCRIPTIONS UI 🟢
                 subGrid.innerHTML = '<div class="loader"></div>';
                 database.ref('users/' + user.uid + '/subscriptions').once('value').then((snapshot) => {
                     let subHTML = '';
@@ -521,7 +562,14 @@
         function toggleLike() { document.getElementById('likeBtn').classList.toggle('active'); document.getElementById('dislikeBtn').classList.remove('active'); }
         function toggleDislike() { document.getElementById('dislikeBtn').classList.toggle('active'); document.getElementById('likeBtn').classList.remove('active'); }
         
-        function getShareUrl() { if (currentActiveVideoObj && currentActiveVideoObj.id) { return `https://www.youtube.com/watch?v=${currentActiveVideoObj.id}`; } return window.location.href; }
+        // 🟢 FIX: Smart Sharing URL for Sub-repository 🟢
+        function getShareUrl() { 
+            if (currentActiveVideoObj && currentActiveVideoObj.id) { 
+                return window.location.origin + "/Trendsteam-/?v=" + currentActiveVideoObj.id; 
+            } 
+            return window.location.href; 
+        }
+
         function shareVideo() { const url = getShareUrl(); if (navigator.share) { navigator.share({ title: 'Watch this amazing video!', url: url }).catch(console.error); } else { alert("Share feature not supported."); } }
         function shareWhatsApp() { const url = encodeURIComponent(getShareUrl()); const text = encodeURIComponent("Hey! Check out this awesome video on TrendStream: "); window.open(`https://api.whatsapp.com/send?text=${text} ${url}`, '_blank'); }
         function shareFacebook() { const url = encodeURIComponent(getShareUrl()); window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank'); }
